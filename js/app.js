@@ -13,13 +13,6 @@ var largeRow = $('.large_row');
 var smallRow = $('.small_row');
 var globalValue;
 
-// Function to get ajaxRequest
-
-function ajaxRequest(){
-	
-	return result;
-}
-
 // Function too add all locations to the DOM
 
 function addResults(value){
