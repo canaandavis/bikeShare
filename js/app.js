@@ -6,12 +6,12 @@ $(document).ready(function(){
 		addResults(value);
 	});
 	
-
 });
 
 var lastUpdate = 0;
 var largeRow = $('.large_row');
 var smallRow = $('.small_row');
+var globalValue;
 
 // Function to get ajaxRequest
 
@@ -23,6 +23,9 @@ function ajaxRequest(){
 // Function too add all locations to the DOM
 
 function addResults(value){
+	globalValue = value;
+
+	console.log("run: " + value);
 	
 	var result =
 		$.ajax({
@@ -50,6 +53,11 @@ function addResults(value){
 				}
 			});
 		}
+		setTimeout(function(){
+			if (value === globalValue) {
+				addResults(value);	
+			}
+		}, 30000);
 	});
 }
 

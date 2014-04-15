@@ -23,9 +23,9 @@ body {
 	margin-top: 3px;
 }
 
-button {
+.nav_button {
 	border: .1em solid white;
-	height: 2.5em;
+	height: 3.6em;
 	width: 5.8em;
 	margin: 0;
 	font-size: .8em;
@@ -62,6 +62,10 @@ button:focus {
 
 .content {
 	min-height: 400px;
+}
+
+.small_content {
+	min-height: 300px;
 }
 
 /* Font and size format for large and small items */
@@ -143,10 +147,6 @@ h1 {
 	background-color: rgba(109, 173, 61, .83000);
 }
 
-.few_slots {
-	color: #ecca2c;
-}
-
 .no_slots {
 	background-color: rgba(186, 56, 57, .85000);
 }
@@ -164,5 +164,4 @@ h1 {
 .template {
 	display: none;
 }
-
 
