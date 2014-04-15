@@ -34,32 +34,21 @@ function addResults(value){
 	.done(function(result){
 	var timeStamp = result[0].timestamp;
 
-
 		if (lastUpdate === 0 || lastUpdate < timeStamp) {
 			console.log("working");
 			lastUpdate = timeStamp;
 			largeRow.empty();
 			smallRow.empty();
 
-			if (value === "all") {
-				addToDOM(result);
-			}
-			else if (value === "campus") {
-				$.each(result, function(i, item){
+			$.each(result, function(i, item){
+				if (isInArea(item, value)) {
+					var largeItem = showLarge(item);
+					largeRow.append(largeItem);
 
-					if (isInCampus(item)) {
-						var largeItem = showLarge(item);
-						largeRow.append(largeItem);
-
-						var smallItem = showSmall(item);
-						smallRow.append(smallItem);
-					}
-				});
-			}
-
-
-
-			
+					var smallItem = showSmall(item);
+					smallRow.append(smallItem);
+				}
+			});
 		}
 	});
 }
@@ -128,26 +117,55 @@ function statusSmallItems(item, num) {
 }
 
 // Function to append each element to the DOM
-function addToDOM(result){
-	$.each(result, function(i, item){
-		var largeItem = showLarge(item);
-		largeRow.append(largeItem);
+function addToDOM(item){
+	var largeItem = showLarge(item);
+	largeRow.append(largeItem);
 
-		var smallItem = showSmall(item);
-		smallRow.append(smallItem);
-	});
+	var smallItem = showSmall(item);
+	smallRow.append(smallItem);
 }
 
 // Function to check if item is in campus grid
-function isInCampus(item){
-	var campusCord = {
-		south: 30277638,
-		west: -97752770,
-		north: 30296389,
-		east: -97728051
-	};
+function isInArea(item, value){
+	var coordinates; 
 
-	if (item.lat > campusCord.south && item.lat < campusCord.north) {
+	if (value === "all") {
+		return true;
+	}
+	else if (value === "campus"){
+		coordinates = {
+			south: 30277638,
+			west: -97752770,
+			north: 30296389,
+			east: -97728051
+		};
+	}
+	else if (value === "downtown") {
+		coordinates = {
+			north: 30277638,
+			south: 30260236,
+			east: -97736533,
+			west: -97755952
+		};
+	}
+	else if (value === "south") {
+		coordinates = {
+			north: 30266617,
+			south: 30240840,
+			east: -97745281,
+			west:  -97783862
+		};
+	}
+	else if (value === "east") {
+		coordinates = {
+			north: 30280478,
+			south: 30247396,
+			east: -97699200,
+			west: -97734440
+		};
+	}
+		
+	if (item.lat >= coordinates.south && item.lat <= coordinates.north && item.lng <= coordinates.east && item.lng >= coordinates.west) {
 		return true;
 	}
 	else {
