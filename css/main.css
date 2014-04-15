@@ -1,0 +1,160 @@
+body {
+	/*background-color: rgba(20, 20, 20, .70000);*/
+
+}
+
+::-webkit-scrollbar{    
+    display: none;    
+    width: 0 !important;    
+}
+
+/* Navigation Bar */
+
+.head_nav {
+	min-height: 40px;
+	padding-top: 10px;
+}
+
+.head_nav h1 {
+	font-size: 3em;
+}
+
+.links {
+	margin-top: 3px;
+}
+
+button {
+	border: .1em solid white;
+	height: 2.5em;
+	width: 5.8em;
+	margin: 0;
+	font-size: .8em;
+	background-color: black;
+	color: white;
+}
+
+button:focus {
+	outline: none;
+}
+
+/* Background Image */
+
+.wrapper {
+	background-image: url("../austin.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	/*opacity: .1;*/
+}
+
+/* Container for holding results */
+
+.container {
+	overflow:hidden;
+	padding: 0;
+	/*background-color: rgba(20, 20, 20, .80000);*/
+	max-height: 600px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Container for large results */
+
+.content {
+	min-height: 600px;
+}
+
+/* Font and size format for large and small items */
+
+.large_item, .small_item {
+	background-color: rgba(255, 255, 255, .8800);
+	border-top: 1px solid #d0d0d0;
+}
+
+h1 {
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	font-size: 2.3em;
+}
+
+	/* Boxes in large content*/
+
+	.box {
+		text-align: center;
+		color: white;
+		background-color: black;
+		width: 100%;
+		height: 100%;
+		font-size: 1.2em;
+		padding-top: .1em;
+	}
+
+	.box_border {
+		margin-top: 5px;
+		margin-left: .4em;
+		margin-right: .4em;
+		border: 3px solid black;
+		height: 35%;
+		width: 47%;
+		padding: 3px;
+	}
+
+	.avbl_box {
+		float: left;
+	}
+
+	.rtrn_box {
+		float: right;
+	}
+
+	/* Format for large items */
+
+	.large_item {
+		height: 115px;
+	}
+
+	.item_header {
+		height: 50%;
+		width: 100%;
+		/*border-bottom: 1px dashed grey;*/
+		text-align: center;
+		padding-top: 5px;
+	}
+
+	/* Format for small items */
+
+	.small_item {
+		font-family: 'Lato', sans-serif;
+		padding-left: 1.5em;
+		min-height: 75px;
+	}
+	.small_head {
+		
+		font-size: 2em;
+	}
+
+	.small_status {
+		font-size: 1.2em;
+	}
+
+/* Style for status*/
+
+/*.open_slots {
+	color: #5bc15b;
+}
+
+.few_slots {
+	color: #ecca2c;
+}
+
+.no_slots {
+	color: #f03131;
+}*/
+
+/* Style for templates */
+
+.template {
+	display: none;
+}
+
+
