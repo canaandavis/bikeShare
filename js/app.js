@@ -67,12 +67,15 @@ function showLarge(item){
 	var container = $('.template .large_item').clone();
 	var forRent = item.bikes;
 	var forReturn = item.free;
+	var lat = item.lat / 1000000;
+	var lng = item.lng / 1000000;
 	var avblBox = container.find('.avbl_box').find('.box');
 	var rtrnBox = container.find('.rtrn_box').find('.box');
 
 	container.find('h1').text(item.name);
 	container.find('.avbl').text(item.bikes);
 	container.find('.rtrn').text(item.free);
+	container.find('a').attr("href", "http://maps.google.com/?q=" + lat +"," + lng);
 
 	statusLargeItems(avblBox, forRent);
 	statusLargeItems(rtrnBox, forReturn);
@@ -86,6 +89,8 @@ function showSmall(item){
 	var container = $('.template .small_item').clone();
 	var forRent = item.bikes;
 	var forReturn = item.free;
+	var lat = item.lat / 1000000;
+	var lng = item.lng / 1000000;
 	var avblNum = container.find('.avbl');
 	var rtrnNum = container.find('.rtrn');
 
@@ -93,6 +98,7 @@ function showSmall(item){
 	container.find('.small_head').text(item.name);
 	container.find('.avbl').text(forRent);
 	container.find('.rtrn').text(forReturn);
+	container.find('a').attr("href", "http://maps.google.com/?q=" + lat +"," + lng);
 
 	statusSmallItems(avblNum, forRent);
 	statusSmallItems(rtrnNum, forReturn);
