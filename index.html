@@ -26,24 +26,24 @@
           <h1>Austin Bikeshare</h1>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-3 links">
-            <button type="button">All</button><!-- 
-             --><button type="button">Campus</button><!-- 
-             --><button type="button">Downtown</button><!-- 
-             --><button type="button">South</button><!-- 
-             --><button type="button">East</button>
+              <button type="button"   class="nav_button" value="all">      All</button><!-- 
+             --><button type="button" class="nav_button" value="campus">   Campus</button><!-- 
+             --><button type="button" class="nav_button" value="downtown"> Downtown</button><!-- 
+             --><button type="button" class="nav_button" value="south">    South</button><!-- 
+             --><button type="button" class="nav_button" value="north">    East</button>
         </div>
       </div>
     </div>
 
     <div class="wrapper">
         <div class="container content hidden-xs large_content">
-          <div class="row">
+          <div class="row large_row">
            
           </div>
         </div>
         <div class="container visible-xs small_content">
           
-          <div class="row">
+          <div class="row small_row">
           
           </div>
         
@@ -52,27 +52,31 @@
     </div>
 
     <!-- Templates -->
-      <!-- Big Template -->
-        <div class="col-xs-12 col-md-8 col-md-offset-2 template large_item">
-          <div class="item_header"><h1></h1></div>
-          <div class="box_border avbl_box">
-            <div class="box open_slots">
-              AVBL: <span class="number"></span>
+      
+      <div class="template">
+        <!-- Big Template -->
+          <div class="col-xs-12 col-md-8 col-md-offset-2 large_item">
+            <div class="item_header"><h1></h1></div>
+            <div class="box_border avbl_box">
+              <div class="box">
+                AVBL: <span class="number avbl"></span>
+              </div>
+            </div>
+            <div class="box_border rtrn_box">
+              <div class="box">
+                RTRN: <span class="number rtrn"></span>
+              </div>
             </div>
           </div>
-          <div class="box_border rtrn_box">
-            <div class="box few_slots">
-              RTRN: <span class="number"></span>
-            </div>
+
+        <!-- Small Template -->
+
+          <div class="col-xs-12 small_item">
+            <span class="small_head"></span><br>
+            <span class="small_status ">AVBL: <span class="number avbl"></span></span> | <span class="small_status ">RTRN: <span class="number rtrn"></span></span>
           </div>
-        </div>
 
-      <!-- Small Template -->
-
-        <div class="col-xs-12 template small_item template">
-          <span class="small_head"></span><br>
-          <span class="small_status ">AVBL: <span class="number open_slots"></span></span> | <span class="small_status ">RTRN: <span class="number few_slots"></span></span>
-        </div>
+      </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
