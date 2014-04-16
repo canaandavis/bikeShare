@@ -178,6 +178,8 @@ a:hover {
 /* Footer style */
 
 .footer {
+	font-family: 'lato', sans-serif;
+	font-size: .9em;
 	text-align: right;
 }
 
