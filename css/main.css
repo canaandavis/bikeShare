@@ -1,5 +1,18 @@
+/* Fonts */
+
+@font-face {
+font-family: klinc;
+src: url("../fonts/KlinicSlabLight.otf") format("opentype");
+}
+
+@font-face {
+font-family: Vincent;
+src: url("../fonts/Vincent-Regular.otf") format("opentype");
+}
+
 body {
 	/*background-color: rgba(20, 20, 20, .70000);*/
+	background-image: url(../images/arches.png);
 
 }
 
@@ -16,7 +29,8 @@ body {
 }
 
 .head_nav h1 {
-	font-size: 3em;
+	font-family: Vincent;
+	font-size: 3.5em;
 }
 
 .links {
@@ -24,11 +38,12 @@ body {
 }
 
 .nav_button {
+	font-family: Vincent;
 	border: .1em solid white;
 	height: 3.6em;
-	width: 5.8em;
+	/*width: 5.8em;*/
 	margin: 0;
-	font-size: .8em;
+	font-size: 1em;
 	background-color: black;
 	color: white;
 }
@@ -66,7 +81,7 @@ button:focus {
 
 .small_content {
 	min-height: 300px;
-	max-height: 400px;
+	max-height: 375px;
 }
 
 /* Font and size format for large and small items */
@@ -77,9 +92,9 @@ button:focus {
 }
 
 h1 {
-	font-family: 'Lato', sans-serif;
+	font-family: 'lato', sans-serif;
 	margin: 0;
-	font-size: 2.3em;
+	font-size: 2.1em;
 }
 
 a {
@@ -99,7 +114,8 @@ a:hover {
 		background-color: rgba(0, 0, 0, .8000);
 		width: 100%;
 		height: 100%;
-		font-size: 1.2em;
+		font-size: 1.3em;
+		font-family: Vincent;
 		padding-top: .1em;
 	}
 
@@ -150,6 +166,12 @@ a:hover {
 	.small_status {
 		font-size: 1.2em;
 	}
+
+/* Footer style */
+
+.footer {
+	text-align: right;
+}
 
 /* Style for status*/
 
