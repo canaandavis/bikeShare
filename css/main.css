@@ -66,6 +66,7 @@ button:focus {
 
 .small_content {
 	min-height: 300px;
+	max-height: 400px;
 }
 
 /* Font and size format for large and small items */
