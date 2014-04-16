@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	addResults('all');
+
 	$('.nav_button').on('click', function(){
 		var value = $(this).val();
 		console.log(value);
