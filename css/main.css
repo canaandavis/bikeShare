@@ -145,6 +145,12 @@ a:hover {
 		float: right;
 	}
 
+	/* Items */
+
+	.fadeClass {
+		background-color: red;
+	}
+
 	/* Format for large items */
 
 	.large_item {

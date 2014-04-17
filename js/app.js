@@ -6,14 +6,16 @@ $(document).ready(function(){
 		console.log(value);
 		lastUpdate=0;
 		addResults(value);
+		clicked = true;
 	});
-	
+
 });
 
 var lastUpdate = 0;
 var largeRow = $('.large_row');
 var smallRow = $('.small_row');
 var globalValue;
+var clicked = false;
 
 // Function too add all locations to the DOM
 
@@ -47,10 +49,13 @@ function addResults(value){
 					smallRow.append(smallItem);
 				}
 			});
+			fadeResultsOut();
+			fadeResultsIn();
 		}
 		setTimeout(function(){
+			clicked = false;
 			if (value === globalValue) {
-				addResults(value);	
+				addResults(value);
 			}
 		}, 30000);
 	});
@@ -117,11 +122,11 @@ function statusLargeItems(item, num) {
 
 function statusSmallItems(item, num) {
 	// if (num > 6) {
-	// 	item.addClass('open_slots_small');
+	//	item.addClass('open_slots_small');
 	// }
 	// else 
 	if (num <= 3) {
-		item.addClass('no_slots_small')
+		item.addClass('no_slots_small');
 	}
 }
 
@@ -134,9 +139,20 @@ function addToDOM(item){
 	smallRow.append(smallItem);
 }
 
+// Function to fade results and back in on update
+function fadeResultsOut() {
+	if (clicked !== true) {
+		$('.item').find('.box, .number').fadeOut(1000);
+	}
+}
+
+function fadeResultsIn() {
+	$('.item').find('.box, .number').fadeIn(1000);
+}
+
 // Function to check if item is in campus grid
 function isInArea(item, value){
-	var coordinates; 
+	var coordinates;
 
 	if (value === "all") {
 		return true;
