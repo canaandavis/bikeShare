@@ -189,13 +189,10 @@ a:hover {
 	text-align: right;
 }
 
-.footer span {
+.footer #key {
 	font-size: .9em;
 }
 
-#updateTime {
-	font-size: .9em;
-}
 
 /* Style for status*/
 
