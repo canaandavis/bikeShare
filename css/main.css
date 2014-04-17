@@ -145,6 +145,12 @@ a:hover {
 		float: right;
 	}
 
+	/* Items */
+
+	.fadeClass {
+		background-color: red;
+	}
+
 	/* Format for large items */
 
 	.large_item {
@@ -182,6 +188,11 @@ a:hover {
 	font-size: .9em;
 	text-align: right;
 }
+
+.footer #key {
+	font-size: .9em;
+}
+
 
 /* Style for status*/
 

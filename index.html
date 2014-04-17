@@ -6,6 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/moment.min.js"></script>
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
@@ -68,6 +69,8 @@
     <div class="container">
           <div class="row">
             <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 footer">
+              <span id="key">*AVBL - Number of bikes for rent | *RTRN - Number of open return slots</span><br>
+              Updated at: <span id="updateTime"></span><br>
               Powered by: <a href="http://www.citybik.es/" target="_blank">City Bikes</a>
             </div>
           </div>
@@ -77,19 +80,19 @@
       
       <div class="template">
         <!-- Big Template -->
-          <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 large_item">
+          <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 large_item item">
             <div class="item_header"><h1></h1></div>
             <div class="box_border avbl_box">
               <a href="" target="_blank">
-                <div class="box">
-                  AVBL: <span class="number avbl"></span>
+                <div class="box avbl_box_small">
+                  AVBL: <span class="avbl"></span>
                 </div>
             </a>
             </div>
             <div class="box_border rtrn_box">
               <a href="" target="_blank">
-                <div class="box">
-                  RTRN: <span class="number rtrn"></span>
+                <div class="box rtrn_box_small">
+                  RTRN: <span class="rtrn"></span>
                 </div>
             </a>
             </div>
@@ -97,7 +100,7 @@
 
         <!-- Small Template -->
 
-          <div class="col-xs-12 small_item">
+          <div class="col-xs-12 small_item item">
             <span class="small_head"></span><br>
             <a href="" target="_blank"><span class="small_status ">AVBL: <span class="number avbl"></span></span> | <span class="small_status ">RTRN: <span class="number rtrn"></span></span></a>
           </div>
