@@ -189,6 +189,14 @@ a:hover {
 	text-align: right;
 }
 
+.footer span {
+	font-size: .9em;
+}
+
+#updateTime {
+	font-size: .9em;
+}
+
 /* Style for status*/
 
 .open_slots {

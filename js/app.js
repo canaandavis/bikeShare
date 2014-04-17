@@ -15,7 +15,9 @@ var lastUpdate = 0;
 var largeRow = $('.large_row');
 var smallRow = $('.small_row');
 var globalValue;
-var clicked = false;
+var clicked = true;
+var previousResultsHash = {};
+var holdResults = {};
 
 // Function too add all locations to the DOM
 
@@ -39,18 +41,25 @@ function addResults(value){
 			lastUpdate = timeStamp;
 			largeRow.empty();
 			smallRow.empty();
+			holdResults = {};
 
 			$.each(result, function(i, item){
+				holdResults[item.name] = {bikes: item.bikes, free: item.free};
+
 				if (isInArea(item, value)) {
 					var largeItem = showLarge(item);
 					largeRow.append(largeItem);
 
 					var smallItem = showSmall(item);
 					smallRow.append(smallItem);
+
+					checkIfUpdate(largeItem, smallItem, item);
+
 				}
 			});
-			fadeResultsOut();
 			fadeResultsIn();
+			previousResultsHash = holdResults;
+			timeNow();
 		}
 		setTimeout(function(){
 			clicked = false;
@@ -139,16 +148,6 @@ function addToDOM(item){
 	smallRow.append(smallItem);
 }
 
-// Function to fade results and back in on update
-function fadeResultsOut() {
-	if (clicked !== true) {
-		$('.item').find('.box, .number').fadeOut(1000);
-	}
-}
-
-function fadeResultsIn() {
-	$('.item').find('.box, .number').fadeIn(1000);
-}
 
 // Function to check if item is in campus grid
 function isInArea(item, value){
@@ -196,4 +195,34 @@ function isInArea(item, value){
 	else {
 		return false;
 	}
+}
+
+// Functions to update results
+
+	// Function to fade results out on update
+	function fadeResultsOut(element) {
+		$(element).find('.box, .number').fadeOut(1000);
+	}
+		
+	// Function to fade results in on update
+	function fadeResultsIn() {
+		$('.item').find('.box, .number').fadeIn(1000);
+	}
+
+	// Logic to check if results have been updated and then apply fade functions
+
+	function checkIfUpdate(largeItem, smallItem, objectItem) {
+		if (previousResultsHash[objectItem.name] !== undefined && holdResults[objectItem.name].bikes !== previousResultsHash[objectItem.name].bikes) {
+			console.log("changed : " + objectItem.name + " Previous: " + previousResultsHash[objectItem.name].bikes);
+			fadeResultsOut(largeItem);
+			fadeResultsOut(smallItem)
+		}
+	}
+
+// Function to update time
+
+function timeNow() {
+	var result = moment().format('hh:mm:ss a | MMM-DD-YY');
+	$('.footer').find('#updateTime')
+	.text(result);
 }
